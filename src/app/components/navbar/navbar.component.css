@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+.mat-toolbar{
+    background-color: black;
+}
+
+.mx{
+    margin: 5px;
+    margin-left: 20px;
+}

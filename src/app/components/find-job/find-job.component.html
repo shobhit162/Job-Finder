@@ -1,0 +1,30 @@
+<div class="bg" style="min-height: 100vh;background-color: lightgrey;">
+<div class="row">
+  <mat-card class="example-card"  *ngFor="let job of filteredJobs?filteredJobs:jobs">
+    <mat-card-header>
+     <div class="sahi1"><div mat-card-avatar [style.background-image]="'url(' + job.logo + ')'" style="background-size: cover;"></div></div>
+     <div class="sahi"><mat-card-title>{{ job.company }}</mat-card-title></div> 
+    </mat-card-header>
+    <div style="height: 140px;">
+    <p class="font">
+      <b>Company:</b> {{ job.company }} <br>
+      <b>Job Role:</b> {{ job.profile }} <br>
+      <b>Location:</b> {{ job.location }}<br>
+      <b>Skills:</b> {{ job.skills }} <br>
+      <b>Package:</b> {{ job.pack }} <br>
+    </p>
+  </div>
+    <!-- <mat-card-content> </mat-card-content> -->
+    <mat-card-actions>
+      <button *ngIf="isAuthenticated" mat-icon-button color="primary" (click)="deleteJob(job)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button *ngIf="isAuthenticated" mat-icon-button color="primary" (click)="editJob(job)" style="padding-right: 38px;
+      margin-right: 25px;">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-button><a href={{job.apply_now}} target="_blank" style="text-decoration: none;">Apply Now</a></button>
+  </mat-card-actions>
+  </mat-card>
+</div>
+</div>

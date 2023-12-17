@@ -1,0 +1,88 @@
+/* .example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+  }
+   */
+  .sahi{
+    padding-top: 0px;
+    padding-left: 6px;
+  }
+
+  .sahi1{
+    padding-top: 12px;
+    padding-left: 4px;
+  }
+  
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    /* padding-left: 30px; */
+    padding-top: 30px;
+    /* background-color: lightgrey; */
+    align-content: space-around;
+    justify-content: center;
+  }
+  
+  .font{
+    font-size: small;
+      text-align: -webkit-auto;
+      font-family: unset;
+      padding-block: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+  
+  .bottom{
+    position: bottom;
+  }
+
+.example-card {
+  width: 274px;
+  margin: 10px;
+  background-color: lightyellow;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.example-card mat-card-header {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-top: 9px;
+  background-color: grey; 
+  color: #fff; 
+  border-radius: 8px 8px 0 0; 
+}
+
+
+.example-card mat-card-header mat-card-title {
+  margin-left: 8px;
+}
+
+
+.example-card .font {
+  font-size: 14px;
+  padding: 8px;
+}
+
+.example-card mat-card-actions button:first-child {
+  background-color: #007bff; 
+  color: #fff; 
+  margin-right: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.example-card mat-card-actions button:last-child {
+  background-color: #ccc; 
+  color: #fff; 
+  border: none;
+  cursor: pointer;
+}
+
+.example-card mat-card-actions button:hover {
+  opacity: 0.8;
+}
+

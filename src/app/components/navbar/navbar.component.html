@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <a routerLink="/home" style="text-decoration: none; color: white; padding-right: 20px;">
+      Job Finder
+    </a>
+    <a routerLink="/find-job" style="text-decoration: none; color: white; padding-right: 20px; font-size: medium;">
+      Find a Job
+    </a>
+    <a routerLink="post-job" *ngIf="isAuthenticated" style="text-decoration: none; color: white; font-size: medium;">
+      Post a Job
+    </a>
+    <span class="example-spacer"></span>
+    <a routerLink="about-us" style="text-decoration: none; color: white; padding-right: 20px; font-size: medium;">
+      About Me
+    </a>
+    <p *ngIf="isAuthenticated" style="margin-top: 10px;">
+      <a style="cursor: pointer; font-size: medium;" (click)="onLogout()">Logout</a>
+    </p>
+    <button *ngIf="!isAuthenticated" mat-button [matMenuTriggerFor]="menu" style="font-size: medium;">Login/Signup</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item><a routerLink="login" style="text-decoration: none; color: black; padding-right: 20px; font-size: medium;">Login</a></button>
+  <button mat-menu-item><a routerLink="signin" style="text-decoration: none; color: black; padding-right: 20px; font-size: medium;">Signup</a></button>
+</mat-menu>
+</mat-toolbar>

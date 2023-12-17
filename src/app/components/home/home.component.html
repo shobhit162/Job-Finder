@@ -1,0 +1,22 @@
+<div class="bg-img">
+    <h1 class="text">.</h1>
+    <div class="search-job">
+      <form class="example-form" (submit)="onSearchJob()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Skills</mat-label>
+          <input matInput placeholder="Python, Java"  [(ngModel)]="searchSkills" name="skills"/>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Location</mat-label>
+          <mat-select [(ngModel)]="searchLocation" name="location">
+            <mat-option *ngFor="let l of loc" [value]="l.value">
+              {{ l.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- <mat-icon class="mat-icon-button search"></mat-icon> -->
+        
+        <button type="submit" class="button" color="accent"><mat-icon matSuffix>search</mat-icon>Filter</button>
+      </form>
+    </div>
+  </div>

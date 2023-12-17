@@ -1,0 +1,174 @@
+<!-- <div class="bg" style="min-height: 100vh; background-color: lightgrey;">
+<br>
+<mat-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      
+      <ng-template matStepLabel>Company Name</ng-template>
+      <mat-form-field>
+        <mat-label>Company Name</mat-label>
+        <input matInput placeholder="Company Name" formControlName="company" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Job URL">
+    <form [formGroup]="secondFormGroup">
+      
+      <mat-form-field>
+        <mat-label>Job Link</mat-label>
+        <input matInput formControlName="apply_now" placeholder="Ex. careers.google.com"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+  
+        <ng-template matStepLabel>Job location</ng-template>
+        <mat-form-field>
+          <mat-label>Job Location</mat-label>
+          <input matInput placeholder="Ex. Bangalore, Pune" formControlName="location" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fourthFormGroup">
+      <form [formGroup]="fourthFormGroup">
+     
+        <ng-template matStepLabel>Skills Required</ng-template>
+        <mat-form-field>
+          <mat-label>Skills required</mat-label>
+          <input matInput placeholder="Ex. C++, Angular, Javascript" formControlName="skills" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fifthFormGroup">
+      <form [formGroup]="fifthFormGroup">
+
+        <ng-template matStepLabel>Package Range</ng-template>
+        <mat-form-field>
+          <mat-label>Package range</mat-label>
+          <input matInput placeholder="Ex. 10 LPA" formControlName="pack" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sixthFormGroup">
+      <form [formGroup]="sixthFormGroup">
+        
+        <ng-template matStepLabel>Company logo</ng-template>
+        <mat-form-field>
+          <mat-label>Logo URL</mat-label>
+          <input matInput placeholder="Logo of the company" formControlName="logo" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="seventhFormGroup">
+      <form [formGroup]="seventhFormGroup">
+       
+        <ng-template matStepLabel>Profile</ng-template>
+        <mat-form-field>
+          <mat-label>Enter Profile</mat-label>
+          <input matInput placeholder="Ex. Software Developer, Front-end" formControlName="profile" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+  
+  <mat-step>
+    <ng-template matStepLabel >Done</ng-template>
+
+    <button mat-raised-button (click)="onSubmit()">Click to submit</button>
+  
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12">
+          
+      </div>
+  </div>
+</div>
+</div> -->
+
+<div class="bg">
+  <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+    <!-- <div *ngIf="submitted" class="success-message">
+      <p>Job details {{ isPrefilled ? 'updated' : 'added' }} successfully!</p>
+    </div> -->
+    <!-- Company Name -->
+    <mat-form-field>
+      <mat-label>Company Name</mat-label>
+      <input matInput placeholder="Company Name" formControlName="company" required>
+    </mat-form-field>
+
+    <!-- Job URL -->
+    <mat-form-field>
+      <mat-label>Job Link</mat-label>
+      <input matInput formControlName="apply_now" placeholder="Ex. careers.google.com" required>
+    </mat-form-field>
+
+    <!-- Job Location -->
+    <mat-form-field>
+      <mat-label>Job Location</mat-label>
+      <input matInput placeholder="Ex. Bangalore, Pune" formControlName="location" required>
+    </mat-form-field>
+
+    <!-- Skills Required -->
+    <mat-form-field>
+      <mat-label>Skills required</mat-label>
+      <input matInput placeholder="Ex. C++, Angular, Javascript" formControlName="skills" required>
+    </mat-form-field>
+
+    <!-- Package Range -->
+    <mat-form-field>
+      <mat-label>Package range</mat-label>
+      <input matInput placeholder="Ex. 10 LPA" formControlName="pack" required>
+    </mat-form-field>
+
+    <!-- Company Logo -->
+    <mat-form-field>
+      <mat-label>Logo URL</mat-label>
+      <input matInput placeholder="Logo of the company" formControlName="logo" required>
+    </mat-form-field>
+
+    <!-- Profile -->
+    <mat-form-field>
+      <mat-label>Enter Profile</mat-label>
+      <input matInput placeholder="Ex. Software Developer, Front-end" formControlName="profile" required>
+    </mat-form-field>
+
+    <div class="button-group">
+      <button mat-button type="submit">{{ isPrefilled ? 'Update' : 'Submit' }}</button>
+      <button mat-button type="button" (click)="resetForm()">Reset</button>
+    </div>
+  </form>
+</div>
